@@ -16,16 +16,7 @@ func main() {
 
 func genPrimes(start, end int, noOfWorkers int) <-chan int {
 	primesCh := make(chan int)
-	nosCh := make(chan int)
-
-	// input data producer
-	go func() {
-		for no := start; no <= end; no++ {
-			nosCh <- no
-		}
-		close(nosCh)
-	}()
-
+	nosCh := produceNos(start, end)
 	go func() {
 		wg := &sync.WaitGroup{}
 		for id := range noOfWorkers {
@@ -38,6 +29,19 @@ func genPrimes(start, end int, noOfWorkers int) <-chan int {
 		close(primesCh)
 	}()
 	return primesCh
+}
+
+func produceNos(start, end int) <-chan int {
+	nosCh := make(chan int)
+
+	// input data producer
+	go func() {
+		for no := start; no <= end; no++ {
+			nosCh <- no
+		}
+		close(nosCh)
+	}()
+	return nosCh
 }
 
 func checkPrime(workerId int, wg *sync.WaitGroup, nosCh <-chan int, primesCh chan int) {
