@@ -71,6 +71,9 @@
 - API support
     - "sync" package
     - "sync/atomic" package
+#### sync.WaitGroup
+    - semaphore based counter
+    - has the ability to block the excution of a function until the counter becomes 0
 
 
 
