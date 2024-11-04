@@ -81,4 +81,30 @@
 go build --race -o 07-example-wrd 07-example.go
 ```
 
+#### Share memory by communicating (channel)
+##### Declaration
+```go
+var <var_name> chan <data_type>
+// ex:
+var ch chan int
+```
+##### Initialization
+```go
+<var_name> = make(chan <data_type>)
+// ex:
+ch = make(chan int)
+```
+###### Channel Operations (<- operator)
+###### Send
+```go
+<var_name> <- <data>
+// ex:
+ch <- 100
+```
+###### Receive
+```go
+<- <var_name> 
+// ex:
+<- ch
+```
 
