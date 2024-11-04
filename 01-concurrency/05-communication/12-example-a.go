@@ -15,15 +15,15 @@ func main() {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 	go add(100, 200, wg, ch)
-	wg.Wait()
 	// receive the result from the channel
-	result := <-ch
+	result := <-ch //(B)(UB)
+	wg.Wait()
 	fmt.Println("Result :", result)
 }
 
 func add(x, y int, wg *sync.WaitGroup, ch chan int) {
-	defer wg.Done()
 	result := x + y
 	// send the result to the channel
-	ch <- result
+	ch <- result // (NB)
+	wg.Done()
 }
