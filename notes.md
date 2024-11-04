@@ -75,5 +75,10 @@
     - semaphore based counter
     - has the ability to block the excution of a function until the counter becomes 0
 
+#### Detecting Data Races
+- create a build with race detector
+```
+go build --race -o 07-example-wrd 07-example.go
+```
 
 
