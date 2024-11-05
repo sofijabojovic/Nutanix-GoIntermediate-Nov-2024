@@ -13,7 +13,7 @@ func main() {
 	}()
 	fmt.Printf("PID : %d\n", os.Getpid())
 	stopCh := make(chan os.Signal, 1)
-	signal.Notify(stopCh, os.Interrupt)
+	signal.Notify(stopCh)
 	primeCh := genPrimes(stopCh)
 	for no := range primeCh {
 		fmt.Printf("Prime No : %d\n", no)
