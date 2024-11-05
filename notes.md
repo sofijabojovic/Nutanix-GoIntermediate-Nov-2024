@@ -124,4 +124,9 @@ ch <- 100
     - context.WithValue(parentCtx, key, value)
         - used for sharing data across context hierarchy
         - non-cancellable
+
+## Database programming
+- Standard Library (database/sql)
+- High Level wrapper database/sql (sqlx)
+
     
