@@ -131,3 +131,14 @@ ch <- 100
 - Code Generator (sqlc)
     - Installation (https://docs.sqlc.dev/en/latest/overview/install.html)
 - ORM (Gorm - https://gorm.io/)
+
+## Http Services
+- App has to listen on a port (80)
+- Receive http requests & respond with http responses
+- Responses are typically JSON payload + http status codes
+###
+- standard library
+    - net/http
+    - encoding/json
+- OSS routing librarires
+- Web Frameworks
