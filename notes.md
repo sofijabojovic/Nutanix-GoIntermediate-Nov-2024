@@ -128,5 +128,5 @@ ch <- 100
 ## Database programming
 - Standard Library (database/sql)
 - High Level wrapper database/sql (sqlx)
-
+- Code Generator (sqlc)
     
