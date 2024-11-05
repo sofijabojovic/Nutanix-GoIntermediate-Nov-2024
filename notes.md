@@ -129,4 +129,5 @@ ch <- 100
 - Standard Library (database/sql)
 - High Level wrapper database/sql (sqlx)
 - Code Generator (sqlc)
-    
+    - Installation (https://docs.sqlc.dev/en/latest/overview/install.html)
+- ORM (Gorm - https://gorm.io/)
