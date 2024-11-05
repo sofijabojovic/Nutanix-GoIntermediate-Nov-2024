@@ -108,3 +108,20 @@ ch <- 100
 <- ch
 ```
 
+### Context
+- Cancel Propagation
+- "context" package
+    - context.Background()
+        - used for creating the 'root' context
+        - non-cancellable
+    - context.WithCancel(parentCtx)
+        - used for programmatic cancellation
+    - context.WithTimeout(parentCtx, duration) 
+        - relative time based cancellation
+        - wrapper on context.WithDeadline()
+    - context.WithDeadline(parentCtx, time.Time)
+        - absolute time based cancellation
+    - context.WithValue(parentCtx, key, value)
+        - used for sharing data across context hierarchy
+        - non-cancellable
+    
